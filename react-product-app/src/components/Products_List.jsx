@@ -26,13 +26,19 @@ function Products_List() {
 
   if (loading) return <p>Loading...</p>
 
-  // 🔥 FILTER HERE
   const filteredProducts = products.filter(product =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
-    <div className='grid grid-cols-4 gap-10 mt-10'>
+    <div className="grid 
+                    grid-cols-1 
+                    sm:grid-cols-2 
+                    md:grid-cols-3 
+                    lg:grid-cols-4 
+                    gap-12 
+                    mt-10 
+                    text-center">
       {filteredProducts.length === 0 ? (
         <p className="text-red-500 text-xl col-span-4 text-center">
           No products found
